@@ -1,4 +1,3 @@
-
 #include <WebServer.h>
 #include "FS.h"
 #include <WiFi.h>
@@ -15,16 +14,10 @@ WebServer server(80);
 
 void handleToggleLED();
 void handleRoot() {
-    String html = pag1;
-    html.replace("{ledStatus1}", String(ledStatus));
-    html.replace("{ledStatus2}", String(ledStatus2));
     server.send(200, "text/html", pag1); 
 }
 
-void handleGetLEDState() {
-    String json = "{ \"led1\": " + String(ledStatus) + ", \"led2\": " + String(ledStatus2) + " }";
-    server.send(200, "application/json", json);
-}
+
 
 
 void setup()
@@ -55,9 +48,7 @@ void setup()
     
     server.on("/", handleRoot);
     server.on("/toggle-led", handleToggleLED);
-    server.on("/get-led-state", handleGetLEDState);
     server.begin();
-
     
 }
 
@@ -76,9 +67,6 @@ void handleToggleLED() {
     }
 }
 
-
-
 void loop(){
     server.handleClient();
 }
-
