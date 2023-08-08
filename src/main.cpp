@@ -3,8 +3,8 @@
 #include <WiFi.h>
 #include "css.h"
 //ver o estado do led atual e atualizar a pagina
-const char* ssid     = "Do Nex";
-const char* password = "inova137nex";
+const char* ssid     = "******";
+const char* password = "********";
 bool ledStatus = false;
 bool ledStatus2 = false;
 int led1 = 2;
