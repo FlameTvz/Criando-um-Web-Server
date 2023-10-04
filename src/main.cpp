@@ -1,14 +1,9 @@
-#include <WebServer.h>
-#include "FS.h"
-#include <WiFi.h>
+#include "libs.h"
+#include "vars.h"
 #include "css.h"
+#include "libs.h"
 //ver o estado do led atual e atualizar a pagina
-const char* ssid     = "Do Nex";
-const char* password = "inova137nex";
-bool ledStatus = false;
-bool ledStatus2 = false;
-int led1 = 2;
-int led2 = 15;
+
 
 WebServer server(80);
 
@@ -48,6 +43,7 @@ void setup()
     
     server.on("/", handleRoot);
     server.on("/toggle-led", handleToggleLED);
+    //   server.on("/potvalue", HTTP_GET, handlePotValue);
     server.begin();
     
 }
