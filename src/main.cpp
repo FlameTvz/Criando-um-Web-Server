@@ -3,7 +3,12 @@
 #include "css.h"
 #include "libs.h"
 //ver o estado do led atual e atualizar a pagina
-
+const char* ssid     = "Do Nex";
+const char* password = "inova137nex";
+bool ledStatus = false;
+bool ledStatus2 = false;
+int led1 = 2;
+int led2 = 15;
 
 WebServer server(80);
 
